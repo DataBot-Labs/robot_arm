@@ -1,9 +1,9 @@
 <launch>
 
 <rosparam file="$(find robot_arm_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="raw" args="base_link_joint_position_controller elbow_joint_position_controller under_arm_joint_position_controller wrist_joint_position_controller hand_joint_position_controller joint_state_controller "/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="robot_arm" args="base_link_joint_position_controller elbow_joint_position_controller under_arm_joint_position_controller wrist_joint_position_controller hand_joint_position_controller joint_state_controller "/>
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/raw/joint_states"/>
+  <remap from="/joint_states" to="/robot_arm/joint_states"/>
 </node>
 
 </launch>
