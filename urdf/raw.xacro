@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="raw" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find raw_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find raw_description)/urdf/raw.trans" />
-<xacro:include filename="$(find raw_description)/urdf/raw.gazebo" />
+<xacro:include filename="$(find robot_arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find robot_arm_description)/urdf/raw.trans" />
+<xacro:include filename="$(find robot_arm_description)/urdf/raw.gazebo" />
 <link name="base_link">
   <inertial>
     <origin xyz="1.8991555738630513e-17 -2.0890711312493566e-16 0.055989083792736496" rpy="0 0 0"/>
@@ -13,14 +13,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -34,14 +34,14 @@
   <visual>
     <origin xyz="-0.05 -0.0 -0.165" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/upper_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/upper_arm_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.05 -0.0 -0.165" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/upper_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/upper_arm_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -55,14 +55,14 @@
   <visual>
     <origin xyz="-0.05 0.015 -0.47" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.05 0.015 -0.47" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -76,14 +76,14 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.51" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/under_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/under_arm_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.51" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/under_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/under_arm_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -97,14 +97,14 @@
   <visual>
     <origin xyz="-0.05 -0.0 -0.83" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.05 -0.0 -0.83" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -118,14 +118,14 @@
   <visual>
     <origin xyz="-0.0 0.0 -0.955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/hand_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/hand_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 0.0 -0.955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/hand_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/hand_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -139,14 +139,14 @@
   <visual>
     <origin xyz="-0.06 0.0 -0.975" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/tump_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/tump_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.06 0.0 -0.975" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/tump_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/tump_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -160,14 +160,14 @@
   <visual>
     <origin xyz="0.06 0.0 -0.975" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/finger_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/finger_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0.06 0.0 -0.975" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://raw_description/meshes/finger_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://robot_arm_description/meshes/finger_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
