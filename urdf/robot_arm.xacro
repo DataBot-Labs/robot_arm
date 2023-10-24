@@ -1,0 +1,297 @@
+<?xml version="1.0" ?>
+<robot name="robot_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="1.8991555738630513e-17 -2.0890711312493566e-16 0.055989083792736496" rpy="0 0 0"/>
+    <mass value="30.074559481801863"/>
+    <inertia ixx="0.147066" iyy="0.155261" izz="0.177136" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upper_arm_link_1">
+  <inertial>
+    <origin xyz="-0.0500323071626823 2.589793084947217e-05 0.15819769987038382" rpy="0 0 0"/>
+    <mass value="9.141673277066278"/>
+    <inertia ixx="0.086872" iyy="0.101251" izz="0.020863" ixy="-0.0" iyz="-3.5e-05" ixz="-2.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.05 -0.0 -0.165" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/upper_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.05 -0.0 -0.165" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/upper_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_link_1">
+  <inertial>
+    <origin xyz="-0.05 0.015050434490052968 -0.03511768047679675" rpy="0 0 0"/>
+    <mass value="9.388433277016729"/>
+    <inertia ixx="0.025466" iyy="0.022631" izz="0.01285" ixy="0.0" iyz="-1.7e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.05 0.015 -0.47" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.05 0.015 -0.47" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="under_arm_link_1">
+  <inertial>
+    <origin xyz="1.4818939979931135e-17 2.0968800071602552e-15 0.1831769084700421" rpy="0 0 0"/>
+    <mass value="9.635687058030266"/>
+    <inertia ixx="0.085866" iyy="0.097571" izz="0.019263" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.51" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/under_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.51" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/under_arm_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_link_1">
+  <inertial>
+    <origin xyz="-0.05 -6.011587699924609e-15 0.010892669596675675" rpy="0 0 0"/>
+    <mass value="5.605606933175597"/>
+    <inertia ixx="0.015241" iyy="0.015224" izz="0.004801" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.05 -0.0 -0.83" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.05 -0.0 -0.83" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_link_1">
+  <inertial>
+    <origin xyz="0.0 -6.927791673660977e-15 0.010000000000000009" rpy="0 0 0"/>
+    <mass value="1.1303999999999998"/>
+    <inertia ixx="0.000377" iyy="0.001394" izz="0.001696" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.0 -0.955" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/hand_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.0 -0.955" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/hand_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tump_link_1">
+  <inertial>
+    <origin xyz="-0.019999999999999997 -7.200166389035681e-15 0.03749999999999998" rpy="0 0 0"/>
+    <mass value="0.44156249999999997"/>
+    <inertia ixx="0.000299" iyy="0.000215" izz="0.0001" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.06 0.0 -0.975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/tump_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.06 0.0 -0.975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/tump_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="finger_link_1">
+  <inertial>
+    <origin xyz="0.009999999999999995 -7.200166389035681e-15 0.03749999999999998" rpy="0 0 0"/>
+    <mass value="0.44156249999999997"/>
+    <inertia ixx="0.000299" iyy="0.000215" izz="0.0001" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.06 0.0 -0.975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/finger_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.06 0.0 -0.975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_arm_description/meshes/finger_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_link_joint" type="revolute">
+  <origin xyz="0.05 0.0 0.165" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="upper_arm_link_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.658063" lower="-1.658063" effort="100" velocity="100"/>
+</joint>
+
+<joint name="elbow_joint" type="revolute">
+  <origin xyz="0.0 -0.015 0.305" rpy="0 0 0"/>
+  <parent link="upper_arm_link_1"/>
+  <child link="elbow_link_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.919862" lower="-1.919862" effort="100" velocity="100"/>
+</joint>
+
+<joint name="under_arm_joint" type="revolute">
+  <origin xyz="-0.05 0.015 0.04" rpy="0 0 0"/>
+  <parent link="elbow_link_1"/>
+  <child link="under_arm_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="wrist_joint" type="revolute">
+  <origin xyz="0.05 0.0 0.32" rpy="0 0 0"/>
+  <parent link="under_arm_link_1"/>
+  <child link="wrist_link_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="hand_joint" type="revolute">
+  <origin xyz="-0.05 -0.0 0.125" rpy="0 0 0"/>
+  <parent link="wrist_link_1"/>
+  <child link="hand_link_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+  <limit upper="0.785398" lower="-0.785398" effort="100" velocity="100"/>
+</joint>
+
+<joint name="trump_joint" type="fixed">
+  <origin xyz="0.06 0.0 0.02" rpy="0 0 0"/>
+  <parent link="hand_link_1"/>
+  <child link="tump_link_1"/>
+</joint>
+
+<joint name="finger_joint" type="fixed">
+  <origin xyz="-0.06 0.0 0.02" rpy="0 0 0"/>
+  <parent link="hand_link_1"/>
+  <child link="finger_link_1"/>
+</joint>
+
+<gazebo reference="base_link">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="upper_arm_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="elbow_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="under_arm_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="wrist_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="hand_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tump_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="finger_link_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>

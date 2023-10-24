@@ -10,7 +10,7 @@ from launch_ros.descriptions import ParameterValue
 
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='robot_arm_description').find('robot_arm_description')
-    default_model_path = os.path.join(pkg_share, 'urdf/raw.xacro')
+    default_model_path = os.path.join(pkg_share, 'urdf/robot_arm.xacro')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_default.rviz')
     use_sim_time = LaunchConfiguration('use_sim_time')
 
