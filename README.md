@@ -1,2 +1,2 @@
-# robot_arm
-Raw model design 
+# robot_arm_description
+
