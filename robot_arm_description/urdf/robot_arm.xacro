@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <robot name="robot_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <link name="world"/>
+
   <link name="base_link">
     <inertial>
       <origin xyz="0.0046536909454116026 1.0519874642441434e-06 0.06573158511890381" rpy="0 0 0"/>
@@ -185,6 +187,12 @@
     </collision>
   </link>
 
+  <joint name="world2base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <dynamics damping="10" friction="1.0"/>
+  </joint>
+
   <joint name="shoulder_joint" type="revolute">
     <origin xyz="0.03435 0.0 0.194998" rpy="0 0 0"/>
     <parent link="base_link"/>
@@ -297,5 +305,77 @@
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
+
+  <!-- Ros2 Control Interface  -->
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+      <parameters>$(find robot_arm_description)/config/controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+
+    <joint name="shoulder_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">0.0</param>  
+    </joint>
+    <joint name="elbow_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">-1.57</param>  
+    </joint>
+    <joint name="wrist_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">0.0</param>  
+    </joint>
+    <joint name="gripper_lower_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">0.0</param>  
+    </joint>
+    <joint name="gripper_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">0.0</param>  
+    </joint>
+    <joint name="finger1_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">0.0</param>  
+    </joint>
+    <joint name="finger2_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <param name="initial_position">0.0</param>  
+    </joint>
+  
+  </ros2_control>
 
 </robot>
