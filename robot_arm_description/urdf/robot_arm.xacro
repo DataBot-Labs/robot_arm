@@ -1,0 +1,687 @@
+<?xml version="1.0" ?>
+<robot name="robot_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robot_arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find robot_arm_description)/urdf/robot_arm.trans" />
+<xacro:include filename="$(find robot_arm_description)/urdf/robot_arm.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-3.272943369910224e-10 -2.7974324413916578e-05 0.03084400827140529" rpy="0 0 0"/>
+    <mass value="1.6983904313863403"/>
+    <inertia ixx="0.003891" iyy="0.003883" izz="0.005405" ixy="0.0" iyz="3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="plastic_glossy_black"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley1_1">
+  <inertial>
+    <origin xyz="-8.165417721507379e-17 1.1648428628781293e-08 -0.018705658092223645" rpy="0 0 0"/>
+    <mass value="0.3005629451424798"/>
+    <inertia ixx="0.000134" iyy="0.000134" izz="0.000215" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.00049 -0.12851" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.00049 -0.12851" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table1_1">
+  <inertial>
+    <origin xyz="-0.043393590889091734 0.010060766756769323 0.0573640488143512" rpy="0 0 0"/>
+    <mass value="1.0372310567744285"/>
+    <inertia ixx="0.00415" iyy="0.004856" izz="0.004625" ixy="-0.00018" iyz="0.000274" ixz="0.001386"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.00049 -0.12851" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="plastic_glossy_black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.00049 -0.12851" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tbone_1">
+  <inertial>
+    <origin xyz="0.08312711258046024 9.932068520271379e-05 0.018307819304134165" rpy="0 0 0"/>
+    <mass value="0.5280635062648829"/>
+    <inertia ixx="0.000776" iyy="0.000919" izz="0.000561" ixy="-0.0" iyz="1e-06" ixz="-3.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08586 -3e-05 -0.291028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/tbone_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="plastic_glossy_black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08586 -3e-05 -0.291028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/tbone_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table2_1">
+  <inertial>
+    <origin xyz="-0.04528208329035506 -2.3296583311654596e-05 0.07196779021785715" rpy="0 0 0"/>
+    <mass value="0.8139801161620963"/>
+    <inertia ixx="0.006064" iyy="0.006763" izz="0.001302" ixy="-0.0" iyz="1e-06" ixz="0.001417"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000161 -7.4e-05 -0.398571" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="aluminum_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000161 -7.4e-05 -0.398571" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table3_1">
+  <inertial>
+    <origin xyz="0.0673555876520053 -0.013315778594862993 0.008119178021043116" rpy="0 0 0"/>
+    <mass value="0.5130720834102629"/>
+    <inertia ixx="0.001979" iyy="0.000848" izz="0.002217" ixy="3.4e-05" iyz="-0.000182" ixz="-7.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.076858 -3.4e-05 -0.628731" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="plastic_glossy_black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.076858 -3.4e-05 -0.628731" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table4_1">
+  <inertial>
+    <origin xyz="-0.04072994072719003 -0.03302279821345208 -0.000430016422226398" rpy="0 0 0"/>
+    <mass value="0.68955057444296"/>
+    <inertia ixx="0.001084" iyy="0.001023" izz="0.001674" ixy="-0.000482" iyz="2e-06" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001563 0.173121 -0.628724" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001563 0.173121 -0.628724" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table5_1">
+  <inertial>
+    <origin xyz="0.010993010186149049 2.3804591368636885e-05 -0.046976887100922404" rpy="0 0 0"/>
+    <mass value="1.0173893106974197"/>
+    <inertia ixx="0.001609" iyy="0.001884" izz="0.000811" ixy="-0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.009393 0.259627 -0.629224" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.009393 0.259627 -0.629224" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/table5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor1_1">
+  <inertial>
+    <origin xyz="2.4975577161967522e-14 -2.215028219648696e-05 0.010272735022593266" rpy="0 0 0"/>
+    <mass value="0.13794111754968577"/>
+    <inertia ixx="0.000108" iyy="0.000108" izz="3.5e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.071 -0.166028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque1965339"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.071 -0.166028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley2_1">
+  <inertial>
+    <origin xyz="1.5390163662034774e-05 -1.571654984591775e-05 -0.024473040249306688" rpy="0 0 0"/>
+    <mass value="0.04173686481696317"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.071 -0.131028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.071 -0.131028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor2_1">
+  <inertial>
+    <origin xyz="0.08248856394827578 4.2432549692964605e-05 -4.266337991082336e-06" rpy="0 0 0"/>
+    <mass value="4.058064438692845"/>
+    <inertia ixx="0.00217" iyy="0.00951" izz="0.00951" ixy="-4e-06" iyz="-0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.097184 5e-05 -0.211028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque202209238"/>
+  </visual>
+  <collision>
+    <origin xyz="0.097184 5e-05 -0.211028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley3_1">
+  <inertial>
+    <origin xyz="-0.01620444042898496 -3.8972174740112366e-05 -3.332848507453523e-07" rpy="0 0 0"/>
+    <mass value="0.12636528221393842"/>
+    <inertia ixx="1.6e-05" iyy="1.4e-05" izz="1.4e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.102029 -2.1e-05 -0.211028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.102029 -2.1e-05 -0.211028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley4_1">
+  <inertial>
+    <origin xyz="-0.035015405213140824 -1.8306672768345608e-05 -0.0013029421806645125" rpy="0 0 0"/>
+    <mass value="0.43083542945962616"/>
+    <inertia ixx="0.000269" iyy="0.000216" izz="0.000208" ixy="0.0" iyz="0.0" ixz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.085884 -3e-05 -0.291028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.085884 -3e-05 -0.291028" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="logo1_1">
+  <inertial>
+    <origin xyz="-0.0007322618882534403 0.0007201542224564081 -0.00086327723039481" rpy="0 0 0"/>
+    <mass value="0.0317243895392696"/>
+    <inertia ixx="2e-06" iyy="1e-05" izz="9e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.00018 0.034926 -0.309821" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/logo1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque160160160"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.00018 0.034926 -0.309821" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/logo1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="logo2_1">
+  <inertial>
+    <origin xyz="0.0007317019494740016 0.0002798355662800636 -0.0008632772303988068" rpy="0 0 0"/>
+    <mass value="0.03172438953926963"/>
+    <inertia ixx="2e-06" iyy="1e-05" izz="9e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000143 -0.035074 -0.309821" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/logo2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque160160160"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000143 -0.035074 -0.309821" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/logo2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor3_1">
+  <inertial>
+    <origin xyz="0.0476694279222076 2.409675329171377e-05 2.178254872930996e-05" rpy="0 0 0"/>
+    <mass value="0.13794111754968713"/>
+    <inertia ixx="3.5e-05" iyy="0.000108" izz="0.000108" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.064839 -4.1e-05 -0.453571" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque1965339"/>
+  </visual>
+  <collision>
+    <origin xyz="0.064839 -4.1e-05 -0.453571" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor4_1">
+  <inertial>
+    <origin xyz="-2.600750576911559e-07 0.04727349001059818 2.16829058641288e-05" rpy="0 0 0"/>
+    <mass value="0.1379411175496863"/>
+    <inertia ixx="0.000108" iyy="3.5e-05" izz="0.000108" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.009222 -0.048743 -0.682474" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque1965339"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.009222 -0.048743 -0.682474" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley5_1">
+  <inertial>
+    <origin xyz="3.076627772486719e-05 -0.016200067607766187 -4.684346014416363e-07" rpy="0 0 0"/>
+    <mass value="0.12636528221393836"/>
+    <inertia ixx="1.4e-05" iyy="1.6e-05" izz="1.4e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.009222 -0.037793 -0.682474" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.009222 -0.037793 -0.682474" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley6_1">
+  <inertial>
+    <origin xyz="9.580770453880517e-06 -0.017706074385527584 -4.778752964451627e-07" rpy="0 0 0"/>
+    <mass value="0.30056294514232784"/>
+    <inertia ixx="0.000134" iyy="0.000215" izz="0.000134" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001454 -0.036763 -0.628724" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001454 -0.036763 -0.628724" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley7_1">
+  <inertial>
+    <origin xyz="-0.017705180289450242 -8.747092173288366e-06 -3.6887420312714525e-07" rpy="0 0 0"/>
+    <mass value="0.30056294514232795"/>
+    <inertia ixx="0.000215" iyy="0.000134" izz="0.000134" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.076839 -3.4e-05 -0.453571" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.076839 -3.4e-05 -0.453571" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley8_1">
+  <inertial>
+    <origin xyz="-0.017705180289452213 -8.747092164477635e-06 -1.071310796740832e-07" rpy="0 0 0"/>
+    <mass value="0.30056294514232845"/>
+    <inertia ixx="0.000215" iyy="0.000134" izz="0.000134" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.076839 -3.4e-05 -0.628731" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.076839 -3.4e-05 -0.628731" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/pulley8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor5_1">
+  <inertial>
+    <origin xyz="0.05605440241182951 2.6991544145205104e-05 -2.1876837808743055e-05" rpy="0 0 0"/>
+    <mass value="0.13388959655603155"/>
+    <inertia ixx="3.4e-05" iyy="0.0001" izz="0.0001" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.059423 0.209652 -0.629224" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque1965339"/>
+  </visual>
+  <collision>
+    <origin xyz="0.059423 0.209652 -0.629224" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor6_1">
+  <inertial>
+    <origin xyz="-0.012625031092452887 0.02499396389357114 3.59435268748598e-06" rpy="0 0 0"/>
+    <mass value="0.34805670979415426"/>
+    <inertia ixx="0.000277" iyy="4.9e-05" izz="0.000266" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.065393 0.259656 -0.629224" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.065393 0.259656 -0.629224" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/motor6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_mount_1">
+  <inertial>
+    <origin xyz="-0.015829699445225835 -0.017005226650149696 -0.0037618765293057077" rpy="0 0 0"/>
+    <mass value="0.020039297863827923"/>
+    <inertia ixx="5e-06" iyy="7e-06" izz="1.1e-05" ixy="1e-06" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.022616 0.28761 -0.589474" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/camera_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="plastic_matte_blue"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.022616 0.28761 -0.589474" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/camera_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="zed_camera_1">
+  <inertial>
+    <origin xyz="-0.0014951915125021205 3.6643610295539197e-06 -0.009645011099281176" rpy="0 0 0"/>
+    <mass value="0.43618915160811983"/>
+    <inertia ixx="4.4e-05" iyy="0.000572" izz="0.000573" ixy="-0.0" iyz="0.0" ixz="-8e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.010099 0.31151 -0.583152" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/zed_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque160160160"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.010099 0.31151 -0.583152" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_arm_description)/meshes/zed_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="pulley1_joint" type="fixed">
+  <origin xyz="0.0 -0.00049 0.12851" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="pulley1_1"/>
+</joint>
+
+<joint name="table1_joint" type="revolute">
+  <origin xyz="0.0 -0.00049 0.12851" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="table1_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="tbone_joint" type="revolute">
+  <origin xyz="-0.08586 0.00052 0.162518" rpy="0 0 0"/>
+  <parent link="table1_1"/>
+  <child link="tbone_1"/>
+  <axis xyz="1.0 0.000515 0.0"/>
+  <limit upper="0.785398" lower="-0.785398" effort="100" velocity="100"/>
+</joint>
+
+<joint name="table2_joint" type="fixed">
+  <origin xyz="0.086021 4.4e-05 0.107543" rpy="0 0 0"/>
+  <parent link="tbone_1"/>
+  <child link="table2_1"/>
+</joint>
+
+<joint name="table3_joint" type="revolute">
+  <origin xyz="-0.077019 -4e-05 0.23016" rpy="0 0 0"/>
+  <parent link="table2_1"/>
+  <child link="table3_1"/>
+  <axis xyz="-1.0 -0.000515 -0.0"/>
+  <limit upper="2.356194" lower="-0.785398" effort="100" velocity="100"/>
+</joint>
+
+<joint name="table4_joint" type="revolute">
+  <origin xyz="0.078421 -0.173155 -7e-06" rpy="0 0 0"/>
+  <parent link="table3_1"/>
+  <child link="table4_1"/>
+  <axis xyz="-0.000515 1.0 0.0"/>
+  <limit upper="0.785398" lower="-0.785398" effort="100" velocity="100"/>
+</joint>
+
+<joint name="table5_joint" type="revolute">
+  <origin xyz="-0.010956 -0.086506 0.0005" rpy="0 0 0"/>
+  <parent link="table4_1"/>
+  <child link="table5_1"/>
+  <axis xyz="1.0 0.000515 0.0"/>
+  <limit upper="0.0" lower="-3.141593" effort="100" velocity="100"/>
+</joint>
+
+<joint name="motor1_joint" type="fixed">
+  <origin xyz="-0.0 0.07149 0.037518" rpy="0 0 0"/>
+  <parent link="table1_1"/>
+  <child link="motor1_1"/>
+</joint>
+
+<joint name="pulley2_joint" type="fixed">
+  <origin xyz="0.0 0.0 -0.035" rpy="0 0 0"/>
+  <parent link="motor1_1"/>
+  <child link="pulley2_1"/>
+</joint>
+
+<joint name="motor2_joint" type="fixed">
+  <origin xyz="-0.097184 0.00044 0.082518" rpy="0 0 0"/>
+  <parent link="table1_1"/>
+  <child link="motor2_1"/>
+</joint>
+
+<joint name="pulley3_joint" type="fixed">
+  <origin xyz="-0.102029 0.000511 0.082518" rpy="0 0 0"/>
+  <parent link="table1_1"/>
+  <child link="pulley3_1"/>
+</joint>
+
+<joint name="pulley4_joint" type="fixed">
+  <origin xyz="-0.085884 0.00052 0.162518" rpy="0 0 0"/>
+  <parent link="table1_1"/>
+  <child link="pulley4_1"/>
+</joint>
+
+<joint name="logo1_joint" type="fixed">
+  <origin xyz="0.08604 -0.034956 0.018793" rpy="0 0 0"/>
+  <parent link="tbone_1"/>
+  <child link="logo1_1"/>
+</joint>
+
+<joint name="logo2_joint" type="fixed">
+  <origin xyz="0.086003 0.035044 0.018793" rpy="0 0 0"/>
+  <parent link="tbone_1"/>
+  <child link="logo2_1"/>
+</joint>
+
+<joint name="motor3_joint" type="fixed">
+  <origin xyz="-0.065 -3.3e-05 0.055" rpy="0 0 0"/>
+  <parent link="table2_1"/>
+  <child link="motor3_1"/>
+</joint>
+
+<joint name="motor4_joint" type="fixed">
+  <origin xyz="0.08608 0.048709 0.053743" rpy="0 0 0"/>
+  <parent link="table3_1"/>
+  <child link="motor4_1"/>
+</joint>
+
+<joint name="pulley5_joint" type="fixed">
+  <origin xyz="0.0 -0.01095 0.0" rpy="0 0 0"/>
+  <parent link="motor4_1"/>
+  <child link="pulley5_1"/>
+</joint>
+
+<joint name="pulley6_joint" type="fixed">
+  <origin xyz="0.078312 0.036729 -7e-06" rpy="0 0 0"/>
+  <parent link="table3_1"/>
+  <child link="pulley6_1"/>
+</joint>
+
+<joint name="pulley7_joint" type="fixed">
+  <origin xyz="-0.077 -4e-05 0.055" rpy="0 0 0"/>
+  <parent link="table2_1"/>
+  <child link="pulley7_1"/>
+</joint>
+
+<joint name="pulley8_joint" type="fixed">
+  <origin xyz="-0.077 -4e-05 0.23016" rpy="0 0 0"/>
+  <parent link="table2_1"/>
+  <child link="pulley8_1"/>
+</joint>
+
+<joint name="motor5_joint" type="fixed">
+  <origin xyz="-0.060986 -0.036531 0.0005" rpy="0 0 0"/>
+  <parent link="table4_1"/>
+  <child link="motor5_1"/>
+</joint>
+
+<joint name="motor6_joint" type="fixed">
+  <origin xyz="-0.066956 -0.086535 0.0005" rpy="0 0 0"/>
+  <parent link="table4_1"/>
+  <child link="motor6_1"/>
+</joint>
+
+<joint name="camera_mount_joint" type="fixed">
+  <origin xyz="0.032009 -0.027983 -0.03975" rpy="0 0 0"/>
+  <parent link="table5_1"/>
+  <child link="camera_mount_1"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="-0.012517 -0.0239 -0.006322" rpy="0 0 0"/>
+  <parent link="camera_mount_1"/>
+  <child link="zed_camera_1"/>
+</joint>
+
+</robot>
