@@ -5,6 +5,9 @@
 <xacro:include filename="$(find robot_arm_description)/urdf/robot_arm.trans" />
 <xacro:include filename="$(find robot_arm_description)/urdf/robot_arm.gazebo" />
 
+<link name="world">
+</link>
+
 <link name="base_link">
   <inertial>
     <origin xyz="-3.272943369910224e-10 -2.7974324413916578e-05 0.03084400827140529" rpy="0 0 0"/>
@@ -529,6 +532,13 @@
     </geometry>
   </collision>
 </link>
+
+<joint name="base_link_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="world"/>
+  <child link="base_link"/>
+  <axis xyz="0.0 0.0 0.0"/>
+</joint>
 
 <joint name="pulley1_joint" type="fixed">
   <origin xyz="0.0 -0.00049 0.12851" rpy="0 0 0"/>
