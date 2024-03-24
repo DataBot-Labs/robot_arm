@@ -1,0 +1,8 @@
+# Default initial positions for robot_arm's ros2_control fake system
+
+initial_positions:
+  table1_joint: 0
+  table3_joint: 0
+  table4_joint: 0
+  table5_joint: 0
+  tbone_joint: 0
