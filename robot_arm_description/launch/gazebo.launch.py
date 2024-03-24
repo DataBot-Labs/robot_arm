@@ -118,6 +118,11 @@ def generate_launch_description():
         output='screen'
         )
 
+    # Start ROS 2 Control controllers
+    start_controllers = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_share, 'launch', 'control.launch.py')),
+        )
+
     # Create the launch description and populate
     ld = LaunchDescription()
  
@@ -135,5 +140,6 @@ def generate_launch_description():
     ld.add_action(start_joint_state_publisher_node)
     ld.add_action(start_rviz_node)
     ld.add_action(spawn_entity)
+    ld.add_action(start_controllers)
     
     return ld
