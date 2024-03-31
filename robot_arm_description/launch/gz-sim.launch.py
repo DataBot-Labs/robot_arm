@@ -1,5 +1,5 @@
 import launch
-from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution, PythonExpression
 import launch_ros
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
@@ -70,9 +70,13 @@ def generate_launch_description():
     start_robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
+        name='robot_state_publisher',
         parameters=[
-            {'use_sim_time': use_sim_time},
-            {'robot_description': Command(['xacro ', urdf_model])}])
+                    {'robot_description': Command( \
+                    ['xacro ', default_robot_model_path,
+                    ' sim_gazebo:=', "false",
+                    ' sim_gz:=', "true",
+                    ])}])
 
     # Publish the joint states of the robot
     start_joint_state_publisher_node = Node(
@@ -94,7 +98,8 @@ def generate_launch_description():
     # Start Ignition Gazebo
     start_gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(pkg_gz_sim_ros, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={"gz_args": world}.items(),
+        launch_arguments={"gz_args" : PythonExpression(["'", world, " -r'"])}.items()
+        # launch_arguments={"gz_args": world}.items(),
         )
 
     # Spawn robot
@@ -111,6 +116,11 @@ def generate_launch_description():
             '-P', spawn_pitch_val,
             '-Y', spawn_yaw_val],
         output='screen')
+    
+    # Start ROS 2 Control controllers
+    start_controllers = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_share, 'launch', 'control.launch.py')),
+        )
 
     # Create the launch description and populate
     ld = LaunchDescription()
@@ -128,5 +138,6 @@ def generate_launch_description():
     ld.add_action(start_joint_state_publisher_node)
     ld.add_action(start_rviz_node)
     ld.add_action(spawn_entity)
+    ld.add_action(start_controllers)
     
     return ld

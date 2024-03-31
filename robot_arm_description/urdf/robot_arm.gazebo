@@ -1,13 +1,34 @@
 <?xml version="1.0" ?>
 <robot name="robot_arm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="body_color" value="0.0 0.9 0.9 1.0" />
 
-<gazebo>
-  <plugin name="control" filename="libgazebo_ros_control.so"/>
-</gazebo>
+<xacro:if value="$(arg sim_gazebo)">
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+      <parameters>$(find robot_arm_description)/config/controller_configuration.yaml</parameters>
+    </plugin>
+  </gazebo>
+</xacro:if>
+
+<xacro:if value="$(arg sim_gz)">
+  <gazebo>
+    <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+    <!-- <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin"> -->
+      <parameters>$(find robot_arm_description)/config/controller_configuration.yaml</parameters>
+    </plugin>
+  </gazebo>
+</xacro:if>
+
 <gazebo reference="base_link">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -15,168 +36,312 @@
 </gazebo>
 
 <gazebo reference="pulley1_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="table1_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="tbone_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="table2_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="table3_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="table4_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="table5_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor1_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley2_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor2_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley3_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley4_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="logo1_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="logo2_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor3_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor4_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley5_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley6_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley7_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="pulley8_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor5_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor6_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="camera_mount_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="zed_camera_1">
-  <material>${body_color}</material>
+  <visual>
+    <material>
+      <ambient>${body_color}</ambient>
+      <diffuse>${body_color}</diffuse>
+      <specular>${body_color}</specular>
+    </material>
+  </visual>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>

@@ -5,6 +5,9 @@
 <xacro:include filename="$(find robot_arm_description)/urdf/robot_arm.trans" />
 <xacro:include filename="$(find robot_arm_description)/urdf/robot_arm.gazebo" />
 
+<xacro:arg name="sim_gazebo" default="false" />
+<xacro:arg name="sim_gz" default="false" />
+
 <link name="world">
 </link>
 
@@ -189,12 +192,12 @@
     </geometry>
     <material name="opaque1965339"/>
   </visual>
-  <collision>
+  <!-- <collision>
     <origin xyz="0.0 -0.071 -0.166028" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find robot_arm_description)/meshes/motor1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-  </collision>
+  </collision> -->
 </link>
 
 <link name="pulley2_1">
@@ -231,12 +234,12 @@
     </geometry>
     <material name="opaque202209238"/>
   </visual>
-  <collision>
+  <!-- <collision>
     <origin xyz="0.097184 5e-05 -0.211028" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find robot_arm_description)/meshes/motor2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-  </collision>
+  </collision> -->
 </link>
 
 <link name="pulley3_1">
@@ -336,12 +339,12 @@
     </geometry>
     <material name="opaque1965339"/>
   </visual>
-  <collision>
+  <!-- <collision>
     <origin xyz="0.064839 -4.1e-05 -0.453571" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find robot_arm_description)/meshes/motor3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-  </collision>
+  </collision> -->
 </link>
 
 <link name="motor4_1">
@@ -357,12 +360,12 @@
     </geometry>
     <material name="opaque1965339"/>
   </visual>
-  <collision>
+  <!-- <collision>
     <origin xyz="-0.009222 -0.048743 -0.682474" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find robot_arm_description)/meshes/motor4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-  </collision>
+  </collision> -->
 </link>
 
 <link name="pulley5_1">
@@ -449,7 +452,7 @@
   </collision>
 </link>
 
-<link name="motor5_1">
+<!-- <link name="motor5_1">
   <inertial>
     <origin xyz="0.05605440241182951 2.6991544145205104e-05 -2.1876837808743055e-05" rpy="0 0 0"/>
     <mass value="0.13388959655603155"/>
@@ -468,7 +471,7 @@
       <mesh filename="file://$(find robot_arm_description)/meshes/motor5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
-</link>
+</link> -->
 
 <link name="motor6_1">
   <inertial>
@@ -483,12 +486,12 @@
     </geometry>
     <material name="steel_satin"/>
   </visual>
-  <collision>
+  <!-- <collision>
     <origin xyz="0.065393 0.259656 -0.629224" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find robot_arm_description)/meshes/motor6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-  </collision>
+  </collision> -->
 </link>
 
 <link name="camera_mount_1">
@@ -670,11 +673,11 @@
   <child link="pulley8_1"/>
 </joint>
 
-<joint name="motor5_joint" type="fixed">
+<!-- <joint name="motor5_joint" type="fixed">
   <origin xyz="-0.060986 -0.036531 0.0005" rpy="0 0 0"/>
   <parent link="table4_1"/>
   <child link="motor5_1"/>
-</joint>
+</joint> -->
 
 <joint name="motor6_joint" type="fixed">
   <origin xyz="-0.066956 -0.086535 0.0005" rpy="0 0 0"/>
