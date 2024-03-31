@@ -46,8 +46,12 @@ def generate_launch_description():
     start_robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
-        parameters=[{'use_sim_time': use_sim_time},{'robot_description': ParameterValue(Command(['xacro ', default_robot_model_path]),value_type=str)}]
-        )
+        parameters=[
+                    {'robot_description': Command( \
+                    ['xacro ', default_robot_model_path,
+                    ' sim_gazebo:=', "true",
+                    ' sim_gz:=', "false",
+                    ])}])
 
     # Publish the joint states of the robot
     start_joint_state_publisher_node = Node(
