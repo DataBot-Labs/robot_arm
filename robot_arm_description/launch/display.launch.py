@@ -49,7 +49,7 @@ def generate_launch_description():
         parameters=[
                     {'robot_description': Command( \
                     ['xacro ', default_robot_model_path,
-                    ' sim_gazebo:=', "true",
+                    ' sim_gazebo:=', "false",
                     ' sim_gz:=', "false",
                     ])}])
 
