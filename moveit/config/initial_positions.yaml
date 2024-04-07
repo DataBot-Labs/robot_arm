@@ -1,0 +1,9 @@
+# Default initial positions for arm's ros2_control fake system
+
+initial_positions:
+  Revolute 28: 0
+  Revolute 3: 0
+  Revolute 40: 0
+  Revolute 44: 0
+  Revolute 48: 0
+  Revolute 65: 0
