@@ -1,0 +1,1222 @@
+<?xml version="1.0" ?>
+<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find arm_description)/urdf/arm.trans" />
+<xacro:include filename="$(find arm_description)/urdf/arm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-4.624614403843058e-14 -1.194549846011122e-16 0.0275289472946314" rpy="0 0 0"/>
+    <mass value="8.36745892677585"/>
+    <inertia ixx="0.018718" iyy="0.018718" izz="0.029518" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pipe_a_v3_1">
+  <inertial>
+    <origin xyz="-3.750134727944099e-08 0.004307791691554187 0.09000000000000004" rpy="0 0 0"/>
+    <mass value="0.09459182309374506"/>
+    <inertia ixx="0.000276" iyy="0.000272" izz="3.7e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pipe_a_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pipe_a_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_c_v9_1">
+  <inertial>
+    <origin xyz="-3.711542334716402e-17 3.465418341771916e-17 0.017705669740652963" rpy="0 0 0"/>
+    <mass value="0.05283781710784995"/>
+    <inertia ixx="2.4e-05" iyy="2.4e-05" izz="3.8e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.09" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_c_v9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.09" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_c_v9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_bearling_house_prt1_v14_1">
+  <inertial>
+    <origin xyz="4.208209917266138e-06 2.4287672296821914e-06 0.0040998460138022275" rpy="0 0 0"/>
+    <mass value="0.05778324976734234"/>
+    <inertia ixx="3.6e-05" iyy="3.6e-05" izz="7.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.0 -0.123" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_prt1_v14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.0 -0.123" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_prt1_v14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_bearling_house_prt2_v1_1">
+  <inertial>
+    <origin xyz="2.673232493707515e-06 7.596386014789396e-11 0.010000000000000009" rpy="0 0 0"/>
+    <mass value="0.17595730314710867"/>
+    <inertia ixx="0.000105" iyy="0.000105" izz="0.000198" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.1314" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_prt2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.1314" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_prt2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table1_v2_1">
+  <inertial>
+    <origin xyz="-0.018933947770008112 -0.0198227756761575 0.008078541713728293" rpy="0 0 0"/>
+    <mass value="0.9953039551471342"/>
+    <inertia ixx="0.002494" iyy="0.002414" izz="0.004866" ixy="-9.6e-05" iyz="2e-06" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.1514" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/table1_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.1514" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/table1_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_bearling_house_prt3_v2_1">
+  <inertial>
+    <origin xyz="-3.326885494948e-06 -9.453818388252402e-11 0.004385481296303395" rpy="0 0 0"/>
+    <mass value="0.05938208856291772"/>
+    <inertia ixx="3.7e-05" iyy="3.7e-05" izz="7.3e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.1674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_prt3_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.1674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_prt3_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_v2_1">
+  <inertial>
+    <origin xyz="-0.050033013923865666 0.007447114200204302 0.06537453945113983" rpy="0 0 0"/>
+    <mass value="0.7582173734794716"/>
+    <inertia ixx="0.001635" iyy="0.002653" izz="0.001251" ixy="0.0" iyz="0.000136" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.05 0.095 -0.1674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.05 0.095 -0.1674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="plangearbox1_v2_1">
+  <inertial>
+    <origin xyz="-2.1984024799954284e-05 0.042898539233675155 7.979625855442096e-06" rpy="0 0 0"/>
+    <mass value="2.0006291062763104"/>
+    <inertia ixx="0.001765" iyy="0.000982" izz="0.001764" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="2.4e-05 0.097184 -0.2124" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/plangearbox1_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="2.4e-05 0.097184 -0.2124" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/plangearbox1_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper1_v2_1">
+  <inertial>
+    <origin xyz="-2.2452245726486367e-05 0.04805206213786513 3.44320252383401e-05" rpy="0 0 0"/>
+    <mass value="2.3015126780830975"/>
+    <inertia ixx="0.002356" iyy="0.001134" izz="0.002355" ixy="0.0" iyz="-4e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="6.7e-05 0.013684 -0.2124" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper1_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="6.7e-05 0.013684 -0.2124" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper1_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_bearling_house2_prt3_v3_1">
+  <inertial>
+    <origin xyz="-4.053611486067141e-07 -0.005985827596299197 -9.453798854863749e-11" rpy="0 0 0"/>
+    <mass value="0.05938208856291783"/>
+    <inertia ixx="3.7e-05" iyy="7.3e-05" izz="3.7e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="4.5e-05 0.055884 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house2_prt3_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="4.5e-05 0.055884 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house2_prt3_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="new_pipe_b_v8_1">
+  <inertial>
+    <origin xyz="-3.129526494019785e-05 0.0599996274319991 0.0024896799480112475" rpy="0 0 0"/>
+    <mass value="0.08655426473406591"/>
+    <inertia ixx="0.000229" iyy="3.8e-05" izz="0.000226" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="2.1e-05 0.102029 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/new_pipe_b_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="2.1e-05 0.102029 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/new_pipe_b_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_bearling_house_2prt1_v5_1">
+  <inertial>
+    <origin xyz="4.245957286233296e-06 -0.004300516777600641 -4.207479079365584e-06" rpy="0 0 0"/>
+    <mass value="0.05778324976734234"/>
+    <inertia ixx="3.6e-05" iyy="7.1e-05" izz="3.6e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="2.1e-05 0.102029 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_2prt1_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="2.1e-05 0.102029 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house_2prt1_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_bearling_house2_prt2_v10_1">
+  <inertial>
+    <origin xyz="-7.5349699314253945e-06 0.009999655894721057 7.596390183550739e-11" rpy="0 0 0"/>
+    <mass value="0.17595730314710867"/>
+    <inertia ixx="0.000105" iyy="0.000198" izz="0.000105" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="3e-05 0.085884 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house2_prt2_v10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="3e-05 0.085884 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/shoulder_bearling_house2_prt2_v10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tbone_v1_1">
+  <inertial>
+    <origin xyz="-0.00011794613064055551 -0.04003704373044144 0.011561726309846587" rpy="0 0 0"/>
+    <mass value="0.7230946223073608"/>
+    <inertia ixx="0.000893" iyy="0.000815" izz="0.000779" ixy="0.0" iyz="-0.0" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="9.6e-05 -0.042971 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tbone_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="9.6e-05 -0.042971 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tbone_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pipe_c_v1_1">
+  <inertial>
+    <origin xyz="-0.0001320187372440115 0.004305319532101172 0.029999580087758937" rpy="0 0 0"/>
+    <mass value="0.03153060769791503"/>
+    <inertia ixx="1.6e-05" iyy="1.5e-05" izz="1.2e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0002 -0.002971 -0.325202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pipe_c_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0002 -0.002971 -0.325202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pipe_c_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="table2_v1_1">
+  <inertial>
+    <origin xyz="-6.12294881992853e-06 -0.019391560353605636 0.021075670529906776" rpy="0 0 0"/>
+    <mass value="0.4458483416017101"/>
+    <inertia ixx="0.000644" iyy="0.000372" izz="0.000968" ixy="1e-06" iyz="2.3e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0002 -0.002971 -0.385202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/table2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0002 -0.002971 -0.385202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/table2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_plate_v2_1">
+  <inertial>
+    <origin xyz="-2.137826640507466e-06 0.004999567309755731 0.12307397675626291" rpy="0 0 0"/>
+    <mass value="0.46224273474069966"/>
+    <inertia ixx="0.002956" iyy="0.003113" izz="0.000168" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000157 0.081029 -0.415202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/arm_plate_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000157 0.081029 -0.415202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/arm_plate_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bearing_holder_elbow_v3_1">
+  <inertial>
+    <origin xyz="-6.845835323382682e-06 0.01201199759666069 0.0003832891577878472" rpy="0 0 0"/>
+    <mass value="0.2912306079023313"/>
+    <inertia ixx="0.000136" iyy="0.000186" izz="0.000138" ixy="-0.0" iyz="3e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000156 0.082029 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/bearing_holder_elbow_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000156 0.082029 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/bearing_holder_elbow_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_joint_axes_v5_1">
+  <inertial>
+    <origin xyz="-1.6827600113210312e-05 0.031874638763341095 0.00016453920275782963" rpy="0 0 0"/>
+    <mass value="0.4827163962244698"/>
+    <inertia ixx="0.000198" iyy="0.000151" izz="0.000198" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000151 0.091029 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_joint_axes_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000151 0.091029 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_joint_axes_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_side_plate_v3_1">
+  <inertial>
+    <origin xyz="0.016154358279447962 -0.0014598177767405698 -1.5816912823929385e-07" rpy="0 0 0"/>
+    <mass value="0.3773934236223084"/>
+    <inertia ixx="0.000159" iyy="0.000733" izz="0.000577" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000174 0.047929 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_side_plate_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000174 0.047929 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_side_plate_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_pipe_holder_front_v1_1">
+  <inertial>
+    <origin xyz="-2.47323690585749e-05 0.04744566116714762 -1.6236534283731174e-07" rpy="0 0 0"/>
+    <mass value="0.3644663323879166"/>
+    <inertia ixx="0.000467" iyy="0.000153" izz="0.000323" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075429 0.052391 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_pipe_holder_front_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075429 0.052391 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_pipe_holder_front_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_pipe_holder_rear_v1_1">
+  <inertial>
+    <origin xyz="-4.20793567491376e-05 0.04719676595537801 0.010539249232727865" rpy="0 0 0"/>
+    <mass value="0.4535795509241431"/>
+    <inertia ixx="0.000728" iyy="0.000381" izz="0.000357" ixy="0.0" iyz="-4.4e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.044573 0.050002 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_pipe_holder_rear_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.044573 0.050002 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/elbow_pipe_holder_rear_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pipe_under_arm_v2_1">
+  <inertial>
+    <origin xyz="0.10250046145956458 5.297211662206713e-05 -0.00430794050274208" rpy="0 0 0"/>
+    <mass value="0.12349488015016677"/>
+    <inertia ixx="4.9e-05" iyy="0.000596" izz="0.00059" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.038602 -0.006274 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pipe_under_arm_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.038602 -0.006274 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pipe_under_arm_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_joint_mount_plate_v3_1">
+  <inertial>
+    <origin xyz="0.003007427328477391 -0.0135573443184126 -0.0005099001899347977" rpy="0 0 0"/>
+    <mass value="0.32060285971182284"/>
+    <inertia ixx="0.000426" iyy="0.000112" izz="0.000316" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.181398 -0.006388 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/hand_joint_mount_plate_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.181398 -0.006388 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/hand_joint_mount_plate_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_joint_side_plate_v4_1">
+  <inertial>
+    <origin xyz="0.05175482031717829 0.0020262647922672933 -0.032500138976421344" rpy="0 0 0"/>
+    <mass value="0.3145916195061758"/>
+    <inertia ixx="0.000104" iyy="0.000389" izz="0.000287" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.187433 0.060609 -0.676562" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/hand_joint_side_plate_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.187433 0.060609 -0.676562" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/hand_joint_side_plate_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tool_joint_bearing_holders_v4_1">
+  <inertial>
+    <origin xyz="-0.02310164440010387 -0.0004507513916866407 -1.3897642126003973e-07" rpy="0 0 0"/>
+    <mass value="0.1876316953813937"/>
+    <inertia ixx="0.000156" iyy="0.000132" izz="0.000272" ixy="-2.5e-05" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.264826 0.05557 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_bearing_holders_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.264826 0.05557 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_bearing_holders_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tool_joint_motor_side_plate_right_v1_1">
+  <inertial>
+    <origin xyz="-1.3178657921775194e-05 0.0120004588105316 -0.0362010938452928" rpy="0 0 0"/>
+    <mass value="0.4103392812168007"/>
+    <inertia ixx="0.000476" iyy="0.000576" izz="0.000104" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.264812 0.02757 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_motor_side_plate_right_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.264812 0.02757 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_motor_side_plate_right_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tool_joint_motor_side_plate_left_v6_1">
+  <inertial>
+    <origin xyz="-2.1132639618892668e-05 0.05350045852228083 -0.03720115109503652" rpy="0 0 0"/>
+    <mass value="0.41033928121680513"/>
+    <inertia ixx="0.000476" iyy="0.000576" izz="0.000104" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.264808 0.01957 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_motor_side_plate_left_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.264808 0.01957 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_motor_side_plate_left_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tool_joint_motor_plate_v1_1">
+  <inertial>
+    <origin xyz="-0.01988383196547211 0.02558253113543818 -0.0007908402685924409" rpy="0 0 0"/>
+    <mass value="0.2050367379930667"/>
+    <inertia ixx="3.5e-05" iyy="6.6e-05" izz="9.5e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.284866 0.016559 -0.556562" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_motor_plate_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.284866 0.016559 -0.556562" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/tool_joint_motor_plate_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper_motor1_v3_1">
+  <inertial>
+    <origin xyz="-1.2963740775306931e-09 -2.2151340179916847e-05 0.030273068307443946" rpy="0 0 0"/>
+    <mass value="0.13794111754968555"/>
+    <inertia ixx="0.000108" iyy="0.000108" izz="3.5e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.087 0.0 -0.1514" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor1_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.087 0.0 -0.1514" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor1_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_a_v1_1">
+  <inertial>
+    <origin xyz="3.35979100709316e-05 2.6405443145758418e-06 -0.00042789271290726016" rpy="0 0 0"/>
+    <mass value="0.04192924804169919"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.087 0.0 -0.1149" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_a_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.087 0.0 -0.1149" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_a_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper_motor2_v1_1">
+  <inertial>
+    <origin xyz="-2.5936122922028083e-05 0.05027262974723885 2.1731427938875836e-05" rpy="0 0 0"/>
+    <mass value="0.1379411175496855"/>
+    <inertia ixx="0.000108" iyy="3.5e-05" izz="0.000108" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000156 0.082029 -0.470202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000156 0.082029 -0.470202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper_motor3_v1_1">
+  <inertial>
+    <origin xyz="-0.06527258263415753 -3.4108876595267436e-05 2.2002528992093318e-05" rpy="0 0 0"/>
+    <mass value="0.13794111754968558"/>
+    <inertia ixx="3.5e-05" iyy="0.000108" izz="0.000108" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.053602 -0.006267 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.053602 -0.006267 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper_motor4_v1_1">
+  <inertial>
+    <origin xyz="-0.0392726554964699 -1.988998302513041e-05 2.199317106288401e-05" rpy="0 0 0"/>
+    <mass value="0.13794111754968555"/>
+    <inertia ixx="3.5e-05" iyy="0.000108" izz="0.000108" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.049602 -0.006402 -0.699112" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor4_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.049602 -0.006402 -0.699112" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor4_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper_motor6_v1_1">
+  <inertial>
+    <origin xyz="4.387262861893504e-07 -2.1866968272632806e-05 0.03727290027257035" rpy="0 0 0"/>
+    <mass value="0.13794111754968555"/>
+    <inertia ixx="0.000108" iyy="0.000108" izz="3.5e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.264839 -0.009113 -0.554062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor6_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.264839 -0.009113 -0.554062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/stepper_motor6_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_c3_v1_1">
+  <inertial>
+    <origin xyz="0.01529480326179548 8.103295433293037e-06 -1.4881118781673308e-07" rpy="0 0 0"/>
+    <mass value="0.05283781710784999"/>
+    <inertia ixx="3.8e-05" iyy="2.4e-05" izz="2.4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.038602 -0.006274 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_c3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.038602 -0.006274 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_c3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_c2_v1_1">
+  <inertial>
+    <origin xyz="1.1187124058955654e-07 0.000705308348846051 0.0" rpy="0 0 0"/>
+    <mass value="0.05283781710784993"/>
+    <inertia ixx="2.4e-05" iyy="3.8e-05" izz="2.4e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="9e-06 0.127029 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_c2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="9e-06 0.127029 -0.2924" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_c2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_2_v1_1">
+  <inertial>
+    <origin xyz="-1.8681368414920613e-05 0.0055269484505073435 -1.5717607829368596e-05" rpy="0 0 0"/>
+    <mass value="0.04173686481696317"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="8e-06 0.127184 -0.2124" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="8e-06 0.127184 -0.2124" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_3_v1_1">
+  <inertial>
+    <origin xyz="-1.5183308148367574e-05 0.0005268555986072121 -1.6137520070236278e-05" rpy="0 0 0"/>
+    <mass value="0.04173686481696316"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000147 0.100529 -0.470202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000147 0.100529 -0.470202" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_4_v1_1">
+  <inertial>
+    <origin xyz="2.11554596864734e-05 -0.012027702528955658 -1.589775581256614e-05" rpy="0 0 0"/>
+    <mass value="0.04173671455541899"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000151 0.091029 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_4_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000151 0.091029 -0.645362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_4_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_b_v2_1">
+  <inertial>
+    <origin xyz="-0.005800068872081454 -3.4488755809708276e-05 -1.5816911613786289e-07" rpy="0 0 0"/>
+    <mass value="0.1263652824355778"/>
+    <inertia ixx="1.6e-05" iyy="1.4e-05" izz="1.4e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.020102 -0.006418 -0.699112" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_b_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.020102 -0.006418 -0.699112" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_b_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_5_v1_1">
+  <inertial>
+    <origin xyz="2.558126355911572e-06 -0.03397299677557672 -1.5856584251072725e-05" rpy="0 0 0"/>
+    <mass value="0.04173686481696314"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2148 0.005595 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_5_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2148 0.005595 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_5_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pulley_6_v1_1">
+  <inertial>
+    <origin xyz="-2.1397008183932087e-05 0.012027750601737712 -1.5856584250739658e-05" rpy="0 0 0"/>
+    <mass value="0.04173686481696321"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.264824 0.05167 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_6_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.264824 0.05167 -0.644062" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/pulley_6_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="end_effector_v1_1">
+  <inertial>
+    <origin xyz="2.7416801269830593e-06 1.6222429548781725e-06 -0.010000168034873469" rpy="0 0 0"/>
+    <mass value="0.1759573031471086"/>
+    <inertia ixx="0.000105" iyy="0.000105" izz="0.000198" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.264839 -0.009113 -0.543662" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/end_effector_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.264839 -0.009113 -0.543662" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find arm_description)/meshes/end_effector_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 1" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="pipe_a_v3_1"/>
+</joint>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="0.0 0.0 0.09" rpy="0 0 0"/>
+  <parent link="pipe_a_v3_1"/>
+  <child link="pulley_c_v9_1"/>
+</joint>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.0 -0.0 0.033" rpy="0 0 0"/>
+  <parent link="pulley_c_v9_1"/>
+  <child link="shoulder_bearling_house_prt1_v14_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="0.0 0.0 0.0084" rpy="0 0 0"/>
+  <parent link="shoulder_bearling_house_prt1_v14_1"/>
+  <child link="shoulder_bearling_house_prt2_v1_1"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="0.0 0.0 0.02" rpy="0 0 0"/>
+  <parent link="shoulder_bearling_house_prt2_v1_1"/>
+  <child link="table1_v2_1"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="0.0 0.0 0.016" rpy="0 0 0"/>
+  <parent link="table1_v2_1"/>
+  <child link="shoulder_bearling_house_prt3_v2_1"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="0.05 -0.095 0.016" rpy="0 0 0"/>
+  <parent link="table1_v2_1"/>
+  <child link="shoulder_v2_1"/>
+</joint>
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="-0.050024 -0.002184 0.045" rpy="0 0 0"/>
+  <parent link="shoulder_v2_1"/>
+  <child link="plangearbox1_v2_1"/>
+</joint>
+
+<joint name="Rigid 9" type="fixed">
+  <origin xyz="-4.3e-05 0.0835 0.0" rpy="0 0 0"/>
+  <parent link="plangearbox1_v2_1"/>
+  <child link="stepper1_v2_1"/>
+</joint>
+
+<joint name="Rigid 27" type="fixed">
+  <origin xyz="-1.5e-05 0.03 0.0" rpy="0 0 0"/>
+  <parent link="shoulder_bearling_house2_prt2_v10_1"/>
+  <child link="shoulder_bearling_house2_prt3_v3_1"/>
+</joint>
+
+<joint name="Revolute 28" type="continuous">
+  <origin xyz="-0.050021 -0.007029 0.125" rpy="0 0 0"/>
+  <parent link="shoulder_v2_1"/>
+  <child link="new_pipe_b_v8_1"/>
+  <axis xyz="-0.000515 1.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 31" type="fixed">
+  <origin xyz="-0.050021 -0.007029 0.125" rpy="0 0 0"/>
+  <parent link="shoulder_v2_1"/>
+  <child link="shoulder_bearling_house_2prt1_v5_1"/>
+</joint>
+
+<joint name="Rigid 32" type="fixed">
+  <origin xyz="-0.05003 0.009116 0.125" rpy="0 0 0"/>
+  <parent link="shoulder_v2_1"/>
+  <child link="shoulder_bearling_house2_prt2_v10_1"/>
+</joint>
+
+<joint name="Rigid 34" type="fixed">
+  <origin xyz="-7.5e-05 0.145 0.0" rpy="0 0 0"/>
+  <parent link="new_pipe_b_v8_1"/>
+  <child link="tbone_v1_1"/>
+</joint>
+
+<joint name="Rigid 35" type="fixed">
+  <origin xyz="-0.000104 -0.04 0.032802" rpy="0 0 0"/>
+  <parent link="tbone_v1_1"/>
+  <child link="pipe_c_v1_1"/>
+</joint>
+
+<joint name="Rigid 36" type="fixed">
+  <origin xyz="0.0 0.0 0.06" rpy="0 0 0"/>
+  <parent link="pipe_c_v1_1"/>
+  <child link="table2_v1_1"/>
+</joint>
+
+<joint name="Rigid 37" type="fixed">
+  <origin xyz="4.3e-05 -0.084 0.03" rpy="0 0 0"/>
+  <parent link="table2_v1_1"/>
+  <child link="arm_plate_v2_1"/>
+</joint>
+
+<joint name="Rigid 39" type="fixed">
+  <origin xyz="1e-06 -0.001 0.23016" rpy="0 0 0"/>
+  <parent link="arm_plate_v2_1"/>
+  <child link="bearing_holder_elbow_v3_1"/>
+</joint>
+
+<joint name="Revolute 40" type="continuous">
+  <origin xyz="5e-06 -0.009 0.0" rpy="0 0 0"/>
+  <parent link="bearing_holder_elbow_v3_1"/>
+  <child link="elbow_joint_axes_v5_1"/>
+  <axis xyz="0.000515 -1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 41" type="fixed">
+  <origin xyz="-2.3e-05 0.0431 0.0" rpy="0 0 0"/>
+  <parent link="elbow_joint_axes_v5_1"/>
+  <child link="elbow_side_plate_v3_1"/>
+</joint>
+
+<joint name="Rigid 42" type="fixed">
+  <origin xyz="0.075603 -0.004462 0.0" rpy="0 0 0"/>
+  <parent link="elbow_side_plate_v3_1"/>
+  <child link="elbow_pipe_holder_front_v1_1"/>
+</joint>
+
+<joint name="Rigid 43" type="fixed">
+  <origin xyz="-0.044399 -0.002073 0.0" rpy="0 0 0"/>
+  <parent link="elbow_side_plate_v3_1"/>
+  <child link="elbow_pipe_holder_rear_v1_1"/>
+</joint>
+
+<joint name="Revolute 44" type="continuous">
+  <origin xyz="0.005971 0.056276 0.0" rpy="0 0 0"/>
+  <parent link="elbow_pipe_holder_rear_v1_1"/>
+  <child link="pipe_under_arm_v2_1"/>
+  <axis xyz="-1.0 -0.000515 -0.0"/>
+</joint>
+
+<joint name="Rigid 45" type="fixed">
+  <origin xyz="0.22 0.000114 0.0" rpy="0 0 0"/>
+  <parent link="pipe_under_arm_v2_1"/>
+  <child link="hand_joint_mount_plate_v3_1"/>
+</joint>
+
+<joint name="Rigid 46" type="fixed">
+  <origin xyz="0.006035 -0.066997 0.0312" rpy="0 0 0"/>
+  <parent link="hand_joint_mount_plate_v3_1"/>
+  <child link="hand_joint_side_plate_v4_1"/>
+</joint>
+
+<joint name="Rigid 47" type="fixed">
+  <origin xyz="0.077393 0.005039 -0.0325" rpy="0 0 0"/>
+  <parent link="hand_joint_side_plate_v4_1"/>
+  <child link="tool_joint_bearing_holders_v4_1"/>
+</joint>
+
+<joint name="Revolute 48" type="continuous">
+  <origin xyz="-1.4e-05 0.028 0.0" rpy="0 0 0"/>
+  <parent link="tool_joint_bearing_holders_v4_1"/>
+  <child link="tool_joint_motor_side_plate_right_v1_1"/>
+  <axis xyz="0.000515 -1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 49" type="fixed">
+  <origin xyz="-4e-06 0.008 0.0" rpy="0 0 0"/>
+  <parent link="tool_joint_motor_side_plate_right_v1_1"/>
+  <child link="tool_joint_motor_side_plate_left_v6_1"/>
+</joint>
+
+<joint name="Rigid 50" type="fixed">
+  <origin xyz="0.020054 0.011011 -0.0875" rpy="0 0 0"/>
+  <parent link="tool_joint_motor_side_plate_right_v1_1"/>
+  <child link="tool_joint_motor_plate_v1_1"/>
+</joint>
+
+<joint name="Rigid 51" type="fixed">
+  <origin xyz="-0.087 -0.0 0.0" rpy="0 0 0"/>
+  <parent link="table1_v2_1"/>
+  <child link="stepper_motor1_v3_1"/>
+</joint>
+
+<joint name="Rigid 52" type="fixed">
+  <origin xyz="0.0 0.0 -0.0365" rpy="0 0 0"/>
+  <parent link="stepper_motor1_v3_1"/>
+  <child link="pulley_a_v1_1"/>
+</joint>
+
+<joint name="Rigid 53" type="fixed">
+  <origin xyz="1e-06 -0.001 0.055" rpy="0 0 0"/>
+  <parent link="arm_plate_v2_1"/>
+  <child link="stepper_motor2_v1_1"/>
+</joint>
+
+<joint name="Rigid 54" type="fixed">
+  <origin xyz="-0.015 -7e-06 0.0" rpy="0 0 0"/>
+  <parent link="pipe_under_arm_v2_1"/>
+  <child link="stepper_motor3_v1_1"/>
+</joint>
+
+<joint name="Rigid 55" type="fixed">
+  <origin xyz="-0.005029 0.056404 0.05375" rpy="0 0 0"/>
+  <parent link="elbow_pipe_holder_rear_v1_1"/>
+  <child link="stepper_motor4_v1_1"/>
+</joint>
+
+<joint name="Rigid 56" type="fixed">
+  <origin xyz="-0.020027 0.025672 -0.0025" rpy="0 0 0"/>
+  <parent link="tool_joint_motor_plate_v1_1"/>
+  <child link="stepper_motor6_v1_1"/>
+</joint>
+
+<joint name="Rigid 57" type="fixed">
+  <origin xyz="0.005971 0.056276 0.0" rpy="0 0 0"/>
+  <parent link="elbow_pipe_holder_rear_v1_1"/>
+  <child link="pulley_c3_v1_1"/>
+</joint>
+
+<joint name="Rigid 58" type="fixed">
+  <origin xyz="1.2e-05 -0.025 0.0" rpy="0 0 0"/>
+  <parent link="new_pipe_b_v8_1"/>
+  <child link="pulley_c2_v1_1"/>
+</joint>
+
+<joint name="Rigid 59" type="fixed">
+  <origin xyz="1.6e-05 -0.03 0.0" rpy="0 0 0"/>
+  <parent link="plangearbox1_v2_1"/>
+  <child link="pulley_2_v1_1"/>
+</joint>
+
+<joint name="Rigid 60" type="fixed">
+  <origin xyz="9e-06 -0.0185 0.0" rpy="0 0 0"/>
+  <parent link="stepper_motor2_v1_1"/>
+  <child link="pulley_3_v1_1"/>
+</joint>
+
+<joint name="Rigid 61" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="elbow_joint_axes_v5_1"/>
+  <child link="pulley_4_v1_1"/>
+</joint>
+
+<joint name="Rigid 62" type="fixed">
+  <origin xyz="0.0295 1.6e-05 0.0" rpy="0 0 0"/>
+  <parent link="stepper_motor4_v1_1"/>
+  <child link="pulley_b_v2_1"/>
+</joint>
+
+<joint name="Rigid 63" type="fixed">
+  <origin xyz="-0.050026 0.049975 0.0" rpy="0 0 0"/>
+  <parent link="tool_joint_bearing_holders_v4_1"/>
+  <child link="pulley_5_v1_1"/>
+</joint>
+
+<joint name="Rigid 64" type="fixed">
+  <origin xyz="-2e-06 0.0039 0.0" rpy="0 0 0"/>
+  <parent link="tool_joint_bearing_holders_v4_1"/>
+  <child link="pulley_6_v1_1"/>
+</joint>
+
+<joint name="Revolute 65" type="continuous">
+  <origin xyz="0.0 0.0 -0.0104" rpy="0 0 0"/>
+  <parent link="stepper_motor6_v1_1"/>
+  <child link="end_effector_v1_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+</robot>
