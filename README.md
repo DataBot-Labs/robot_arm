@@ -2,7 +2,7 @@
 Raw model design 
 
 To use it, you have to install ros-humble-ros2-control and ros-humble-ros2-controllers packages.
-see : https://control.ros.org/master/doc/getting_started/getting_started.html#installation for more info 
+see : https://control.ros.org/master/doc/getting_started/getting_started.html#installation for more info.
 
 a complete install of moveit2 
 https://moveit.picknik.ai/main/doc/tutorials/getting_started/getting_started.html
@@ -25,9 +25,18 @@ colcon build --symlink-install
 To run it:
 . install/setup.bash
 
-ros2 launch arm_description display.launch.py 
+ros2 launch arm_description display.launch.py
+
 ros2 launch arm_control armbot_controller.launch.py 
+
 ros2 launch arm_moveit demo.launch.py 
+
+
+to reconfigure your joint groups or anything else related to the model 
+
+ros2 launch moveit_setup_assistant setup_assistant.launch.py 
+
+
 
 
 
