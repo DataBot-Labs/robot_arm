@@ -25,10 +25,9 @@ colcon build --symlink-install
 To run it:
 . install/setup.bash
 
-before running place the .setup_assistant fire in the arm_moveit directory or run the setup assistant to generate the robot arm 
-
-
-ros2 launch moveit demo.launch.py 
+ros2 launch arm_description display.launch.py 
+ros2 launch arm_control armbot_controller.launch.py 
+ros2 launch arm_moveit demo.launch.py 
 
 
 
