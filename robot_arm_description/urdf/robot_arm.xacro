@@ -554,7 +554,7 @@
   <parent link="base_link"/>
   <child link="table1_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+  <limit upper="1.57" lower="-1.57" effort="100" velocity="100"/>
 </joint>
 
 <joint name="tbone_joint" type="revolute">
@@ -592,7 +592,7 @@
   <parent link="table4_1"/>
   <child link="table5_1"/>
   <axis xyz="1.0 0.000515 0.0"/>
-  <limit upper="0.0" lower="-3.141593" effort="100" velocity="100"/>
+  <limit upper="1.57" lower="-1.57" effort="100" velocity="100"/>
 </joint>
 
 <joint name="motor1_joint" type="fixed">
