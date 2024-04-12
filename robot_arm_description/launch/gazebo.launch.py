@@ -69,7 +69,7 @@ def generate_launch_description():
     
     declare_control_launch = DeclareLaunchArgument(
         name='control_launch',
-        default_value='False',
+        default_value='True',
         description='Launch controllers if set to true')
 
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.  
