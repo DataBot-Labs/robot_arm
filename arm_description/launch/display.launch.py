@@ -11,7 +11,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     share_dir = get_package_share_directory('arm_description')
 
-    xacro_file = os.path.join(share_dir, 'urdf', 'arm.xacro')
+    xacro_file = os.path.join(share_dir, 'urdf', 'arm.urdf.xacro')
     robot_description_config = xacro.process_file(xacro_file)
     robot_urdf = robot_description_config.toxml()
 
@@ -23,6 +23,23 @@ def generate_launch_description():
     )
 
     show_gui = LaunchConfiguration('gui')
+    
+    robot_controllers = os.path.join(share_dir, "arm_description" "config",
+            "arm_controller.yaml")
+    
+    #control_node = Node(
+        #package="controller_manager",
+        #executable="ros2_control_node",
+        #parameters=[robot_controllers],
+        #remappings=[
+            #("~/robot_description", "/robot_description"),
+            #(
+           #     "/forward_position_controller/commands",
+            #    "/position_commands",
+          #  ),
+       # ],
+       # output="both",
+ #   )
 
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
@@ -46,6 +63,13 @@ def generate_launch_description():
         executable='joint_state_publisher_gui',
         name='joint_state_publisher_gui'
     )
+    
+    robot_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["arm_controller", "-c", "/controller_manager"],
+    )
+
 
     rviz_node = Node(
         package='rviz2',
@@ -57,6 +81,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         gui_arg,
+        #control_node,
         robot_state_publisher_node,
         joint_state_publisher_node,
         joint_state_publisher_gui_node,

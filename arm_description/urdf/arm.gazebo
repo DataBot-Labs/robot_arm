@@ -1,11 +1,19 @@
 <?xml version="1.0" ?>
 <robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="body_color" value="Gazebo/Blue" />
+<xacro:property name="motor_color" value="Gazebo/Black" />
+<xacro:property name="pulley_color" value="Gazebo/Iron" />
 
 <gazebo>
-  <plugin name="control" filename="libgazebo_ros_control.so"/>
+  <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+      <parameters>$(find arm_description)/config/arm_controller.yaml</parameters>
+    </plugin>
 </gazebo>
+
+
+
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -14,28 +22,14 @@
   <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="pipe_a_v3_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
-</gazebo>
-
 <gazebo reference="pulley_c_v9_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="shoulder_bearling_house_prt1_v14_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
-</gazebo>
-
-<gazebo reference="shoulder_bearling_house_prt2_v1_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
@@ -71,7 +65,7 @@
 </gazebo>
 
 <gazebo reference="stepper1_v2_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
@@ -85,7 +79,7 @@
 </gazebo>
 
 <gazebo reference="new_pipe_b_v8_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
@@ -113,7 +107,7 @@
 </gazebo>
 
 <gazebo reference="pipe_c_v1_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
@@ -162,14 +156,14 @@
 </gazebo>
 
 <gazebo reference="elbow_pipe_holder_rear_v1_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pipe_under_arm_v2_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
@@ -218,104 +212,118 @@
 </gazebo>
 
 <gazebo reference="stepper_motor1_v3_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_a_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="stepper_motor2_v1_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="stepper_motor3_v1_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="stepper_motor4_v1_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="stepper_motor6_v1_1">
-  <material>${body_color}</material>
+  <material>${motor_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_c3_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_c2_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_2_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_3_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_4_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_b_v2_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_5_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="pulley_6_v1_1">
-  <material>${body_color}</material>
+  <material>${pulley_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="end_effector_v1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="pipe_a_v3_1">
+  <material>${motor_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="shoulder_bearling_house_prt2_v1_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>

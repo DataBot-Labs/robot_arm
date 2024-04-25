@@ -4,11 +4,12 @@
 <name>arm_description</name>
   <version>0.0.0</version>
 <description>The arm_description package</description>
-  <maintainer email="todo@todo.com">author</maintainer>
+  <maintainer email="b.vanderhaagen76@gmail.com">author</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>xacro</depend>
   <depend>rviz2</depend>
+  <depend>gazebo_ros_pkgs</depend>
   <depend>robot_state_publisher</depend>
   <depend>joint_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
